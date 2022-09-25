@@ -97,3 +97,16 @@ class _SecondPageState extends State<SecondPage> {
     );
   }
 }
+
+Future<Map> getPics() async {
+  String apiKey = '30112036-5fc592cf8a5e5f679bc48f966';
+  Uri uri = Uri(
+      scheme: 'https',
+      host: 'pixabay.com',
+      path: '/api/',
+      queryParameters: {'key': apiKey, 'q': 'cars', 'image_type': 'photo'});
+
+  http.Response response = await http.get(uri);
+
+  return json.decode(response.body);
+}
