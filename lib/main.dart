@@ -94,6 +94,42 @@ class _SecondPageState extends State<SecondPage> {
           style: TextStyle(color: Colors.white),
         ),
       ),
+      body: FutureBuilder(
+          future: getPics(),
+          builder: (context, snapshot) {
+            Map? data = {};
+            data = snapshot.data as Map;
+            if (snapshot.hasError) {
+              print(snapshot.error);
+              return Text(
+                'Failed to get response from the server',
+                style: TextStyle(color: Colors.red, fontSize: 22.0),
+              );
+            } else if (snapshot.hasData) {
+              return Center(
+                child: ListView.builder(
+                    itemCount: data.length,
+                    itemBuilder: ((context, index) {
+                      return Column(
+                        children: [
+                          Container(
+                            child: InkWell(
+                              onTap: () {},
+                              child: Image.network(
+                                  '${data!['hits'][index]['largeImageURL']}'),
+                            ),
+                          )
+                        ],
+                      );
+                    })),
+              );
+            } else if (!snapshot.hasData) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return Text('Nothing found here');
+          }),
     );
   }
 }
