@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: FirstPage(),
+    home: SecondPage(),
   ));
 }
 
@@ -20,7 +23,7 @@ class FirstPage extends StatelessWidget {
           child: ListView(
             children: [
               SizedBox(
-                height: 12.0,
+                height: 60.0,
               ),
               Image.asset(
                 'assets/images/logo.png',
@@ -41,22 +44,54 @@ class FirstPage extends StatelessWidget {
                       contentPadding:
                           EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0)),
                 ),
-                subtitle: Material(
-                  color: Colors.lightBlue,
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(25.0),
-                  child: MaterialButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Search',
-                      style: TextStyle(
-                          fontSize: 22.0, fontWeight: FontWeight.bold),
+                subtitle: Column(
+                  children: [
+                    SizedBox(
+                      height: 8.0,
                     ),
-                  ),
+                    Material(
+                      color: Colors.lightBlue,
+                      borderRadius: BorderRadius.circular(25.0),
+                      elevation: 8.0,
+                      child: MaterialButton(
+                        minWidth: double.infinity,
+                        onPressed: () {},
+                        child: Text(
+                          'Search',
+                          style: TextStyle(
+                              fontSize: 22.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        padding: EdgeInsets.all(12.0),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatefulWidget {
+  const SecondPage({super.key});
+
+  @override
+  State<SecondPage> createState() => _SecondPageState();
+}
+
+class _SecondPageState extends State<SecondPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Pic Bay',
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
