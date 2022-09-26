@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "641072584602",
+    "project_id": "picbay-8f85f",
+    "storage_bucket": "picbay-8f85f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641072584602:android:5fbdf76555351b6f070c23",
+        "android_client_info": {
+          "package_name": "com.example.pic_bay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641072584602-untkmhhacid2glp5ffvifgd3oddgukh7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCAmSMKzMPovtadLNSDZNsG2_9nDJ77qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641072584602-untkmhhacid2glp5ffvifgd3oddgukh7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

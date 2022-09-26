@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: FirstPage(),
