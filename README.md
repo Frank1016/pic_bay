@@ -1,6 +1,6 @@
 # pic_bay
 
-A new Flutter project.
+A picture search engine for both web and mobile, made by Flutter! Demo link: https://picbay-8f85f.web.app/
 
 ## Getting Started
 
